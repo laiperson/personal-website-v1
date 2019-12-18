@@ -8,6 +8,7 @@ import config from "../../../content/meta/config";
 import Menu from "../Menu";
 
 import avatar from "../../images/jpg/avatar.jpg";
+import logo from "../../images/png/BWTransparent.png";
 
 class Header extends React.Component {
   state = {
@@ -38,14 +39,7 @@ class Header extends React.Component {
         <header className={`header ${this.getHeaderSize()}`}>
           <Link to="/" className="logoType">
             <div className="logo">
-              <img
-                src={config.gravatarImgMd5 == "" ? avatar : config.gravatarImgMd5}
-                alt={config.siteTitle}
-              />
-            </div>
-            <div className="type">
-              <h1>{config.headerTitle}</h1>
-              <h2>{config.headerSubTitle}</h2>
+              <img src={logo} alt={config.siteTitle} />
             </div>
           </Link>
           <FontLoadedContext.Consumer>
@@ -115,22 +109,18 @@ class Header extends React.Component {
           }
 
           .logo {
-            border-radius: 65% 75%;
-            border: 1px solid #eee;
             display: inline-block;
-            height: 44px;
+            height: 100%;
             margin: ${theme.space.inline.default};
             overflow: hidden;
-            width: 44px;
             transition: all 0.5s;
 
             .homepage & {
-              height: 60px;
-              width: 60px;
+              height: 90px;
             }
 
             img {
-              width: 100%;
+              height: 100%;
             }
           }
 
@@ -224,8 +214,8 @@ class Header extends React.Component {
               margin: ${theme.space.inline.default};
 
               .fixed & {
-                height: 36px;
-                width: 36px;
+                height: 50px;
+                padding-left: ${theme.space.l};
               }
 
               .header.homepage:not(.fixed) & {

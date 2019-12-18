@@ -35,6 +35,7 @@ size:
   radius:
     default: 10px
     small: 5px
+    xs: 2px;
 # COLOR
 color:
   # color options

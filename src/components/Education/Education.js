@@ -42,6 +42,7 @@ const Education = props => {
           background-color: ${theme.color.brand.dark};
           justify-content: center;
           padding-top: 60px;
+          min-height: 90vh;
         }
 
         .section-title {
@@ -66,6 +67,10 @@ const Education = props => {
             grid-template-columns: repeat(2, minmax(300px, 350px));
             margin-top: 20px;
             overflow: hidden;
+          }
+
+          .education-container {
+            transform: translateY(50%);
           }
         }
 

@@ -59,7 +59,7 @@ const AboutMe = props => {
         .aboutme {
           background-color: ${theme.color.brand.dark};
           justify-content: center;
-          padding-top: 60px;
+          min-height: 90vh;
         }
 
         .section-title {
@@ -74,6 +74,9 @@ const AboutMe = props => {
           ##Screen = B/w 1025px and bigger
         */
         @from-width desktop {
+          .about-content-container {
+            padding-top: 70px;
+          }
           .about-me-photo {
             display: flex;
             position: relative;

@@ -27,7 +27,7 @@ const Projects = props => {
         #projects {
           background-color: ${theme.color.brand.dark};
           justify-content: center;
-          padding-top: 60px;
+          min-height: 90vh;
         }
 
         .section-title {
@@ -74,6 +74,7 @@ const Projects = props => {
           align-items: flex-start;
           max-width: 1000px;
           margin: auto;
+          transform: translateY(50%);
         }
 
         span {

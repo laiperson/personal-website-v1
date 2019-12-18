@@ -190,7 +190,7 @@ const Experience = props => {
         #experience {
           background-color: ${theme.color.brand.dark};
           justify-content: center;
-          padding-top: 60px;
+          min-height: 90vh;
         }
 
         button {
@@ -238,7 +238,7 @@ const Experience = props => {
         }
 
         h3 {
-          color: rgb(136, 146, 176);
+          color: #45A29E;
           font-weight: 400;
           font-size: ${theme.font.size.s};
         }
@@ -273,6 +273,16 @@ const Experience = props => {
 
         .job-description {
           width: 80%;
+        }
+
+        /* 
+          ##Device = Laptops, Desktops
+          ##Screen = B/w 1025px and bigger
+        */
+        @from-width desktop {
+          .experience-description {
+            transform: translateY(50%);
+          }
         }
       `}</style>
     </React.Fragment>
