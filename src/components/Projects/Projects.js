@@ -5,42 +5,41 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import Project from "../Project";
 
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+
 const Projects = props => {
   const { theme } = props;
 
   const repoData = useStaticQuery(graphql`
-    query RepoQuery {
-      githubData(
-        data: {
-          viewer: {
-            repositories: {
-              edges: {
-                elemMatch: {
-                  node: {
-                    isPrivate: { eq: false }
-                    name: {}
-                    shortDescriptionHTML: {}
-                    updatedAt: {}
-                    url: {}
-                  }
-                }
-              }
-            }
-          }
-        }
-      ) {
-        id
-        data {
-          viewer {
-            repositories {
-              edges {
-                node {
-                  name
-                  shortDescriptionHTML
-                  updatedAt(formatString: "MMMM, YYYY")
-                  isPrivate
-                  url
-                }
+    query repoData {
+      github {
+        viewer {
+          repositories(
+            orderBy: { field: CREATED_AT, direction: DESC }
+            privacy: PUBLIC
+            first: 20
+          ) {
+            edges {
+              node {
+                name
+                description
+                createdAt
+                url
+                isPrivate
+                id
               }
             }
           }
@@ -50,7 +49,11 @@ const Projects = props => {
   `);
 
   // Parse repository response objects for component
-  const repositoryData = repoData.githubData.data.viewer.repositories.edges.map(repo => repo.node);
+  const repositoryData = repoData.github.viewer.repositories.edges.map(repo => repo.node);
+  repositoryData.map(repo => {
+    var dateObj = new Date(repo.createdAt);
+    repo.createdAt = months[dateObj.getMonth()] + ", " + dateObj.getFullYear().toString();
+  });
 
   return (
     <React.Fragment>
@@ -71,9 +74,9 @@ const Projects = props => {
                       key={repository.url}
                       theme={theme}
                       name={repository.name}
-                      description={repository.shortDescriptionHTML}
+                      description={repository.description}
                       url={repository.url}
-                      updatedAt={repository.updatedAt}
+                      updatedAt={repository.createdAt}
                     />
                   </Fade>
                 </div>
