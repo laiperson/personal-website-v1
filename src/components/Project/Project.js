@@ -47,7 +47,7 @@ const Project = props => {
           color: ${theme.color.brand.darkActive};
           padding-bottom: 4px;
           padding-top: 0px;
-          font-size: ${theme.font.size.m};
+          font-size: ${theme.font.size.s};
           font-weight: 600;
           text-transform: uppercase;
           display: table;

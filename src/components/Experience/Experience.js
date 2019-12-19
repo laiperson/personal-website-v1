@@ -70,7 +70,7 @@ const Experience = props => {
   return (
     <React.Fragment>
       <section id="experience">
-        <div className="experience-container" id="experience">
+        <div className="experience-container">
           <Fade bottom>
             <div className="experience-description">
               <div className="section-title">
@@ -194,7 +194,7 @@ const Experience = props => {
         #experience {
           background-color: ${theme.color.brand.dark};
           justify-content: center;
-          min-height: 90vh;
+          min-height: 100vh;
         }
 
         button {
@@ -203,6 +203,7 @@ const Experience = props => {
 
         .section-title {
           width: 55%;
+          min-width: 200px;
           height: 1.5em;
           border-bottom: 1px solid ${theme.color.brand.primary};
           text-align: left;
@@ -284,7 +285,7 @@ const Experience = props => {
           ##Screen = B/w 1025px and bigger
         */
         @from-width desktop {
-          .experience-description {
+          .experience-container {
             transform: translateY(50%);
           }
         }

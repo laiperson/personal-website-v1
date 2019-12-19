@@ -88,7 +88,7 @@ const Projects = props => {
         #projects {
           background-color: ${theme.color.brand.dark};
           justify-content: center;
-          min-height: 90vh;
+          min-height: 100vh;
           display: inline-block;
           width: 100%;
         }
@@ -107,8 +107,11 @@ const Projects = props => {
         */
         @from-width 1142px {
           .project {
-            width: 30%;
-            padding-right: 15px;
+            width: 32%;
+          }
+
+          .project-container {
+            transform: translateY(25%);
           }
         }
 
@@ -116,10 +119,9 @@ const Projects = props => {
           ##Device = Tablet and Phone
           ##Screen = B/w 1024px and smaller
         */
-        @below 1138px {
+        @below 1142px {
           .project {
-            width: 40%;
-            padding-right: 15px;
+            width: 45%;
           }
         }
 
@@ -133,6 +135,7 @@ const Projects = props => {
 
         .section-title {
           width: 55%;
+          min-width: 180px;
           height: 1.5em;
           border-bottom: 1px solid ${theme.color.brand.primary};
           text-align: left;
@@ -141,33 +144,6 @@ const Projects = props => {
         .projects-description {
           width: 100%;
           padding: 60px;
-          transform: translateY(-50%);
-        }
-
-        /* 
-          ##Device = Laptops, Desktops
-          ##Screen = B/w 1025px and bigger
-        */
-        @from-width desktop {
-          .course-list {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(300px, 350px));
-            margin-top: 20px;
-            overflow: hidden;
-          }
-        }
-
-        /* 
-          ##Device = Tablet and Phone
-          ##Screen = B/w 1024px and smaller
-        */
-        @below desktop {
-          .course-list {
-            display: grid;
-            grid-template-columns: repeat(2);
-            margin-top: 20px;
-            overflow: hidden;
-          }
         }
 
         .project-container {
@@ -176,7 +152,6 @@ const Projects = props => {
           align-items: flex-start;
           max-width: 1366px;
           margin: auto;
-          transform: translateY(50%);
         }
 
         span {
@@ -192,22 +167,6 @@ const Projects = props => {
           display: inline-block;
           width: 100%;
           padding-top: 30px;
-        }
-
-        ul {
-          padding-left: 20px;
-          list-style-type: none;
-          list-style-position: inside;
-          color: white;
-          width: 100%;
-        }
-
-        li::before {
-          content: "•";
-          color: ${theme.color.brand.primary};
-          display: inline-block;
-          width: 1em;
-          margin-left: -1em;
         }
       `}</style>
     </React.Fragment>

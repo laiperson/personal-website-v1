@@ -46,11 +46,12 @@ const Education = props => {
           background-color: ${theme.color.brand.dark};
           justify-content: center;
           padding-top: 60px;
-          min-height: 90vh;
+          min-height: 100vh;
         }
 
         .section-title {
           width: 55%;
+          min-width: 180px;
           height: 1.5em;
           border-bottom: 1px solid ${theme.color.brand.primary};
           text-align: left;
