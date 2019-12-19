@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import PropTypes from "prop-types";
 import React from "react";
+import Fade from "react-reveal/Fade";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
@@ -70,118 +71,121 @@ const Experience = props => {
     <React.Fragment>
       <section id="experience">
         <div className="experience-container" id="experience">
-          <div className="experience-description">
-            <div className="section-title">
-              <span>
-                <strong>Experience</strong>
-              </span>
-            </div>
-            <br />
+          <Fade bottom>
+            <div className="experience-description">
+              <div className="section-title">
+                <span>
+                  <strong>Experience</strong>
+                </span>
+              </div>
+              <br />
 
-            <MuiThemeProvider theme={reactTheme}>
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                indicatorColor="primary"
-                textColor={theme.color.neutral.gray.a}
-                variant="scrollable"
-                scrollButtons="auto"
-                aria-label="scrollable auto tabs example"
-              >
-                <Tab label="C.H. Robinson" {...a11yProps(0)} />
-                <Tab label="Grouplens Research" {...a11yProps(1)} />
-                <Tab label="Microsoft" {...a11yProps(2)} />
-                <Tab label="University of Minnesota" {...a11yProps(3)} />
-              </Tabs>
-              <TabPanel value={value} index={0}>
-                <h1>
-                  Software Development Intern<span id="employer">@ C.H. Robinson</span>
-                </h1>
-                <h3>May 2018 - August 2018</h3>
-                <div className="job-description">
-                  <ul className="course-list">
-                    <li>
-                      Focused on back-end software development with the Robinson Fresh delivery
-                      team. This internship consisted of executing project deliverables for an Agile
-                      team and carrying out team stories with the business goals in sight. Worked in
-                      in an Agile Scrum team with C#, ServiceStack, Oracle SQL, Microsoft SQL
-                      Server, and RESTful APIs.
-                    </li>
-                    <li>
-                      Designed and built a full-stack web application tasked with automating the
-                      actions of adding new hires to enterprise resources using an Angular frontend,
-                      ASP.NET Core Web API with over ten REST API endpoints, and a SQL Server
-                      backend
-                    </li>
-                  </ul>
-                </div>
-              </TabPanel>
-              <TabPanel value={value} index={1}>
-                <h1>
-                  Undergraduate Student Researcher<span id="employer">@ Grouplens Research</span>
-                </h1>
-                <h3>August 2018 - Present</h3>
-                <div className="job-description">
-                  <ul className="course-list">
-                    <li>
-                      Participating in socially impactful research utilizing machine learning, web
-                      development, and other technologies to analyze and predict important social
-                      phenomena.
-                    </li>
-                    <li>
-                      Contributing to a full-stack web application tasked with collecting user
-                      thoughts and leveraging the Mechanical Turk API to outsource positive
-                      thoughts. The application uses ReactJS, Express, Node.js, MongoDB, and Docker.
-                    </li>
-                  </ul>
-                </div>
-              </TabPanel>
-              <TabPanel value={value} index={2}>
-                <h1>
-                  Service Engineer Intern<span id="employer">@ Microsoft</span>
-                </h1>
-                <h3>May 2019 - August 2019</h3>
-                <div className="job-description">
-                  <ul className="course-list">
-                    <li>
-                      Automated and formalized the access and permissions process for new hires
-                      across the Azure CXP organization that reduces onboarding wait time by at
-                      least 1500% and improving new hire onboarding experience through a proactive
-                      standard procedure
-                    </li>
-                    <li>
-                      Designed and built a full-stack web application tasked with automating the
-                      actions of adding new hires to enterprise resources using an Angular frontend,
-                      ASP.NET Core Web API with over ten REST API endpoints, and a SQL Server
-                      backend
-                    </li>
-                    <li>
-                      Collaborated cross-functionally with stakeholders in cloud engineering,
-                      program and team management disciplines to develop project vision and a
-                      robust, scalable process
-                    </li>
-                  </ul>
-                </div>
-              </TabPanel>
-              <TabPanel value={value} index={3}>
-                <h1>
-                  Student Software Developer
-                  <span id="employer">@ University Center for Writing</span>
-                </h1>
-                <h3>September 2019 - Present</h3>
-                <div className="job-description">
-                  <ul className="course-list">
-                    <li>
-                      Developing, planning, and maintaining the Center for Writing's full-stack web
-                      application that leverages PHP, MySQL, JavaScript, CSS, and HTML. This
-                      application allows students to schedule/manage appointments to help utilize
-                      the Center for Writing as a resource.
-                    </li>
-                  </ul>
-                </div>
-              </TabPanel>
-            </MuiThemeProvider>
-          </div>
+              <MuiThemeProvider theme={reactTheme}>
+                <Tabs
+                  value={value}
+                  onChange={handleChange}
+                  indicatorColor="primary"
+                  textColor={theme.color.neutral.gray.a}
+                  variant="scrollable"
+                  scrollButtons="auto"
+                  aria-label="scrollable auto tabs example"
+                >
+                  <Tab label="C.H. Robinson" {...a11yProps(0)} />
+                  <Tab label="Grouplens Research" {...a11yProps(1)} />
+                  <Tab label="Microsoft" {...a11yProps(2)} />
+                  <Tab label="University of Minnesota" {...a11yProps(3)} />
+                </Tabs>
+                <TabPanel value={value} index={0}>
+                  <h1>
+                    Software Development Intern<span id="employer">@ C.H. Robinson</span>
+                  </h1>
+                  <h3>May 2018 - August 2018</h3>
+                  <div className="job-description">
+                    <ul className="course-list">
+                      <li>
+                        Focused on back-end software development with the Robinson Fresh delivery
+                        team. This internship consisted of executing project deliverables for an
+                        Agile team and carrying out team stories with the business goals in sight.
+                        Worked in in an Agile Scrum team with C#, ServiceStack, Oracle SQL,
+                        Microsoft SQL Server, and RESTful APIs.
+                      </li>
+                      <li>
+                        Designed and built a full-stack web application tasked with automating the
+                        actions of adding new hires to enterprise resources using an Angular
+                        frontend, ASP.NET Core Web API with over ten REST API endpoints, and a SQL
+                        Server backend
+                      </li>
+                    </ul>
+                  </div>
+                </TabPanel>
+                <TabPanel value={value} index={1}>
+                  <h1>
+                    Undergraduate Student Researcher<span id="employer">@ Grouplens Research</span>
+                  </h1>
+                  <h3>August 2018 - Present</h3>
+                  <div className="job-description">
+                    <ul className="course-list">
+                      <li>
+                        Participating in socially impactful research utilizing machine learning, web
+                        development, and other technologies to analyze and predict important social
+                        phenomena.
+                      </li>
+                      <li>
+                        Contributing to a full-stack web application tasked with collecting user
+                        thoughts and leveraging the Mechanical Turk API to outsource positive
+                        thoughts. The application uses ReactJS, Express, Node.js, MongoDB, and
+                        Docker.
+                      </li>
+                    </ul>
+                  </div>
+                </TabPanel>
+                <TabPanel value={value} index={2}>
+                  <h1>
+                    Service Engineer Intern<span id="employer">@ Microsoft</span>
+                  </h1>
+                  <h3>May 2019 - August 2019</h3>
+                  <div className="job-description">
+                    <ul className="course-list">
+                      <li>
+                        Automated and formalized the access and permissions process for new hires
+                        across the Azure CXP organization that reduces onboarding wait time by at
+                        least 1500% and improving new hire onboarding experience through a proactive
+                        standard procedure
+                      </li>
+                      <li>
+                        Designed and built a full-stack web application tasked with automating the
+                        actions of adding new hires to enterprise resources using an Angular
+                        frontend, ASP.NET Core Web API with over ten REST API endpoints, and a SQL
+                        Server backend
+                      </li>
+                      <li>
+                        Collaborated cross-functionally with stakeholders in cloud engineering,
+                        program and team management disciplines to develop project vision and a
+                        robust, scalable process
+                      </li>
+                    </ul>
+                  </div>
+                </TabPanel>
+                <TabPanel value={value} index={3}>
+                  <h1>
+                    Student Software Developer
+                    <span id="employer">@ University Center for Writing</span>
+                  </h1>
+                  <h3>September 2019 - Present</h3>
+                  <div className="job-description">
+                    <ul className="course-list">
+                      <li>
+                        Developing, planning, and maintaining the Center for Writing's full-stack
+                        web application that leverages PHP, MySQL, JavaScript, CSS, and HTML. This
+                        application allows students to schedule/manage appointments to help utilize
+                        the Center for Writing as a resource.
+                      </li>
+                    </ul>
+                  </div>
+                </TabPanel>
+              </MuiThemeProvider>
+            </div>
+          </Fade>
         </div>
       </section>
 
@@ -220,7 +224,7 @@ const Experience = props => {
           display: flex;
           flex-wrap: wrap;
           align-items: flex-start;
-          max-width: 1000px;
+          max-width: 1366px;
           margin: auto;
         }
 
@@ -238,7 +242,7 @@ const Experience = props => {
         }
 
         h3 {
-          color: #45A29E;
+          color: #45a29e;
           font-weight: 400;
           font-size: ${theme.font.size.s};
         }

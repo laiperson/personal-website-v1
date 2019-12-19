@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import Fade from "react-reveal/Fade";
 
 import avatar from "../../images/jpg/avatar.jpg";
 
@@ -10,47 +11,49 @@ const AboutMe = props => {
     <React.Fragment>
       <section className="aboutme" id="about-me">
         <div className="about-content-container">
-          <div className="about-me-description">
-            <div className="section-title">
-              <span>
-                <strong>About Me</strong>
-              </span>
+          <Fade bottom>
+            <div className="about-me-description">
+              <div className="section-title">
+                <span>
+                  <strong>About Me</strong>
+                </span>
+              </div>
+              <br />
+              <p>
+                Hi! My name is Ben Wiley, and I am currently studying Computer Science at the
+                University of Minnesota, Twin Cities. My interests lie at the intersection of web
+                development and business applications; I am always looking to hone my abilities to
+                create user-friendly, robust, and intuitive web applications that can help provide
+                value to its end-users.
+                <br />
+                <br />
+                At the University of Minnesota, I am pursuing a Bachelors of Science in Computer
+                Science, Science, well as a minor in Chinese Language & Literature. Beyond the
+                classroom, I participate in Human Computer Interaction research with Grouplens
+                Research where I am able to employ computational resources to socially-impactful
+                problems.
+                <br />
+                <br />
+                Here are a few technologies I have worked with:
+              </p>
+              <ul className="technology-list">
+                <li>Angular</li>
+                <li>PHP</li>
+                <li>SQL Server</li>
+                <li>Docker</li>
+                <li>ReactJS</li>
+                <li>HTML/CSS</li>
+                <li>Express</li>
+                <li>MongoDB</li>
+                <li>C#</li>
+                <li>Java</li>
+                <li>Node.js</li>
+              </ul>
             </div>
-            <br />
-            <p>
-              Hi! My name is Ben Wiley, and I am currently studying Computer Science at the
-              University of Minnesota, Twin Cities. My interests lie at the intersection of web
-              development and business applications; I am always looking to hone my abilities to
-              create user-friendly, robust, and intuitive web applications that can help provide
-              value to its end-users.
-              <br />
-              <br />
-              At the University of Minnesota, I am pursuing a Bachelors of Science in Computer
-              Science, Science, well as a minor in Chinese Language & Literature. Beyond the
-              classroom, I participate in Human Computer Interaction research with Grouplens
-              Research where I am able to employ computational resources to socially-impactful
-              problems.
-              <br />
-              <br />
-              Here are a few technologies I have worked with:
-            </p>
-            <ul className="technology-list">
-              <li>Angular</li>
-              <li>PHP</li>
-              <li>SQL Server</li>
-              <li>Docker</li>
-              <li>ReactJS</li>
-              <li>HTML/CSS</li>
-              <li>Express</li>
-              <li>MongoDB</li>
-              <li>C#</li>
-              <li>Java</li>
-              <li>Node.js</li>
-            </ul>
-          </div>
-          <div className="about-me-photo">
-            <img src={avatar}></img>
-          </div>
+            <div className="about-me-photo">
+              <img src={avatar}></img>
+            </div>
+          </Fade>
         </div>
       </section>
 
@@ -146,7 +149,7 @@ const AboutMe = props => {
           display: flex;
           flex-wrap: wrap;
           align-items: flex-start;
-          max-width: 1000px;
+          max-width: 1366px;
           margin: auto;
         }
 

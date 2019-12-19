@@ -24,6 +24,7 @@ const Item = props => {
           font-size: ${theme.space.m};
           font-family: 20px;
         }
+
         .item,
         .showItem {
           background: transparent;

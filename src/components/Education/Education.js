@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import Fade from "react-reveal/Fade";
 
 const Education = props => {
   const { theme } = props;
@@ -8,31 +9,34 @@ const Education = props => {
     <React.Fragment>
       <section className="education" id="education">
         <div className="education-container">
-          <div className="education-description">
-            <div className="section-title">
-              <span>
-                <strong>Education</strong>
-              </span>
+          <Fade bottom>
+            <div className="education-description">
+              <div className="section-title">
+                <span>
+                  <strong>Education</strong>
+                </span>
+              </div>
+              <br />
+              <p>
+                I am currently a third year undergraduate student at the University of Minnesota,
+                Twin Cities; my expected graduation date is May 2021, and I am pursuing a B.S. in
+                Computer Science with a concentration in Software & Data Systems Development.
+                Besides my computer science degree, I am also pursuing a Chinese Language &
+                Literature minor.
+                <br />
+                <br />
+                Relevant Coursework:
+              </p>
+              <ul className="course-list">
+                <li>Data Structures & Algorithms</li>
+                <li>Software Design and Development</li>
+                <li>Internet Programming</li>
+                <li>Linear Algebra and Differential Equations</li>
+                <li>Practice of Database Systems</li>
+                <li>Multivariable Calculus</li>
+              </ul>
             </div>
-            <br />
-            <p>
-              I am currently a third year undergraduate student at the University of Minnesota, Twin
-              Cities; my expected graduation date is May 2021, and I am pursuing a B.S. in Computer
-              Science with a concentration in Software & Data Systems Development. Besides my
-              computer science degree, I am also pursuing a Chinese Language & Literature minor.
-              <br />
-              <br />
-              Relevant Coursework:
-            </p>
-            <ul className="course-list">
-              <li>Data Structures & Algorithms</li>
-              <li>Software Design and Development</li>
-              <li>Internet Programming</li>
-              <li>Linear Algebra and Differential Equations</li>
-              <li>Practice of Database Systems</li>
-              <li>Multivariable Calculus</li>
-            </ul>
-          </div>
+          </Fade>
         </div>
       </section>
 
@@ -91,7 +95,7 @@ const Education = props => {
           display: flex;
           flex-wrap: wrap;
           align-items: flex-start;
-          max-width: 1000px;
+          max-width: 1366px;
           margin: auto;
         }
 

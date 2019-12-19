@@ -1,23 +1,84 @@
 import PropTypes from "prop-types";
 import React from "react";
+import Fade from "react-reveal/Fade";
+import { graphql, useStaticQuery } from "gatsby";
+
+import Project from "../Project";
 
 const Projects = props => {
   const { theme } = props;
 
+  const repoData = useStaticQuery(graphql`
+    query RepoQuery {
+      githubData(
+        data: {
+          viewer: {
+            repositories: {
+              edges: {
+                elemMatch: {
+                  node: {
+                    isPrivate: { eq: false }
+                    name: {}
+                    shortDescriptionHTML: {}
+                    updatedAt: {}
+                    url: {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      ) {
+        id
+        data {
+          viewer {
+            repositories {
+              edges {
+                node {
+                  name
+                  shortDescriptionHTML
+                  updatedAt(formatString: "MMMM, YYYY")
+                  isPrivate
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  // Parse repository response objects for component
+  const repositoryData = repoData.githubData.data.viewer.repositories.edges.map(repo => repo.node);
+
   return (
     <React.Fragment>
       <section id="projects">
-        <div className="education-container">
-          <div className="education-description">
+        <div className="project-container">
+          <div className="projects-description">
             <div className="section-title">
               <span>
                 <strong>Projects</strong>
               </span>
             </div>
             <br />
-            <p>
-              IN-PROGRESS for Projects using GitHub API. Create Project template
-            </p>
+            <div className="projects">
+              {repositoryData.map((repository, i) => (
+                <div className="project" key={i}>
+                  <Fade bottom delay={i * 200} key={i}>
+                    <Project
+                      key={repository.url}
+                      theme={theme}
+                      name={repository.name}
+                      description={repository.shortDescriptionHTML}
+                      url={repository.url}
+                      updatedAt={repository.updatedAt}
+                    />
+                  </Fade>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -28,6 +89,46 @@ const Projects = props => {
           background-color: ${theme.color.brand.dark};
           justify-content: center;
           min-height: 90vh;
+          display: inline-block;
+          width: 100%;
+        }
+
+        .projects {
+          display: flex;
+          flex-direction: row;
+          overflow: auto;
+          flex-wrap: wrap;
+          padding: 10px;
+        }
+
+        /* 
+          ##Device = Laptops, Desktops
+          ##Screen = B/w 1025px and bigger
+        */
+        @from-width 1142px {
+          .project {
+            width: 30%;
+            padding-right: 15px;
+          }
+        }
+
+        /* 
+          ##Device = Tablet and Phone
+          ##Screen = B/w 1024px and smaller
+        */
+        @below 1138px {
+          .project {
+            width: 40%;
+            padding-right: 15px;
+          }
+        }
+
+        @below 760px {
+          .project {
+            width: 100%;
+            margin: auto;
+            margin-top: 20px;
+          }
         }
 
         .section-title {
@@ -37,9 +138,10 @@ const Projects = props => {
           text-align: left;
         }
 
-        .education-description {
+        .projects-description {
           width: 100%;
           padding: 60px;
+          transform: translateY(-50%);
         }
 
         /* 
@@ -68,11 +170,11 @@ const Projects = props => {
           }
         }
 
-        .education-container {
+        .project-container {
           display: flex;
           flex-wrap: wrap;
           align-items: flex-start;
-          max-width: 1000px;
+          max-width: 1366px;
           margin: auto;
           transform: translateY(50%);
         }
@@ -113,7 +215,8 @@ const Projects = props => {
 };
 
 Projects.propTypes = {
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired
 };
 
 export default Projects;
