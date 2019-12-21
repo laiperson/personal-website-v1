@@ -6,6 +6,25 @@ import GithubLogo from "../../images/svg-icons/github.svg";
 const Project = props => {
   const { theme, name, description, url, updatedAt } = props;
 
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  // Transform date object to readable format
+  var dateObj = new Date(updatedAt);
+  var updated = months[dateObj.getMonth()] + ", " + dateObj.getFullYear().toString();
+
   return (
     <React.Fragment>
       <div className="project-container">
@@ -16,7 +35,7 @@ const Project = props => {
         <a href={url}>
           <GithubLogo id="github-logo" />
         </a>
-        <div className="pull-right">{updatedAt}</div>
+        <div className="pull-right">{updated}</div>
       </div>
 
       {/* --- STYLES --- */}

@@ -5,21 +5,6 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import Project from "../Project";
 
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
-
 const Projects = props => {
   const { theme } = props;
 
@@ -50,10 +35,6 @@ const Projects = props => {
 
   // Parse repository response objects for component
   const repositoryData = repoData.github.viewer.repositories.edges.map(repo => repo.node);
-  repositoryData.map(repo => {
-    var dateObj = new Date(repo.createdAt);
-    repo.createdAt = months[dateObj.getMonth()] + ", " + dateObj.getFullYear().toString();
-  });
 
   return (
     <React.Fragment>
