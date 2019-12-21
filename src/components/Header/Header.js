@@ -6,13 +6,25 @@ import VisibilitySensor from "react-visibility-sensor";
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
 import Menu from "../Menu";
+import Hamburger from "../Hamburger";
+import MobileMenu from "../MobileMenu";
 
 import avatar from "../../images/jpg/avatar.jpg";
 import logo from "../../images/png/BWTransparent.png";
 
 class Header extends React.Component {
-  state = {
-    fixed: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuActive: false,
+      fixed: false
+    };
+  }
+
+  toggleMenu = menuActive => {
+    this.setState(prevState => ({
+      menuActive: !prevState.menuActive
+    }));
   };
 
   visibilitySensorChange = val => {
@@ -42,22 +54,8 @@ class Header extends React.Component {
               <img src={logo} alt={config.siteTitle} />
             </div>
           </Link>
-          <FontLoadedContext.Consumer>
-            {loaded => (
-              <ScreenWidthContext.Consumer>
-                {width => (
-                  <Menu
-                    path={path}
-                    fixed={fixed}
-                    screenWidth={width}
-                    fontLoaded={loaded}
-                    pages={pages}
-                    theme={theme}
-                  />
-                )}
-              </ScreenWidthContext.Consumer>
-            )}
-          </FontLoadedContext.Consumer>
+          <MobileMenu active={this.state.menuActive} theme={theme} toggle={this.toggleMenu} />
+          <Hamburger toggleMenu={this.toggleMenu} theme={theme} />
         </header>
         <VisibilitySensor onChange={this.visibilitySensorChange}>
           <div className="sensor" />
@@ -80,7 +78,7 @@ class Header extends React.Component {
               align-items: center;
               display: flex;
               flex-direction: "column";
-              color: ${theme.text.color.primary};
+              color: ${theme.color.brand.light};
 
               .logo {
                 flex-shrink: 0;
@@ -145,22 +143,6 @@ class Header extends React.Component {
             }
           }
 
-          @below desktop {
-            .header.homepage {
-              .logo {
-                border: none;
-              }
-
-              :global(a.logoType),
-              h1 {
-                color: ${theme.color.neutral.white};
-              }
-              h2 {
-                color: ${theme.color.neutral.gray.d};
-              }
-            }
-          }
-
           @from-width desktop {
             .header {
               align-items: center;
@@ -181,25 +163,6 @@ class Header extends React.Component {
                 top: 0;
                 width: 100%;
                 z-index: 1;
-
-                h1 {
-                  margin: ${theme.space.stack.xxs};
-                  color: ${theme.color.neutral.white};
-                }
-
-                h2 {
-                  display: none;
-                }
-              }
-
-              &.homepage:not(.fixed) {
-                :global(a.logoType),
-                h1 {
-                  color: ${theme.color.neutral.white};
-                }
-                h2 {
-                  color: ${theme.color.brand.primary};
-                }
               }
             }
 
@@ -223,7 +186,7 @@ class Header extends React.Component {
               }
             }
 
-            h2 {
+            img {
               animation-duration: ${theme.time.duration.default};
               animation-name: h2Entry;
             }

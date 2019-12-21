@@ -107,7 +107,6 @@ class Layout extends React.Component {
         render={data => {
           const { children } = this.props;
           const {
-            footnote: { html: footnoteHTML },
             pages: { edges: pages }
           } = data;
 
@@ -122,7 +121,7 @@ class Layout extends React.Component {
                       theme={this.state.theme}
                     />
                     <main>{children}</main>
-                    <Footer html={footnoteHTML} theme={this.state.theme} />
+                    <Footer theme={this.state.theme} />
 
                     {/* --- STYLES --- */}
                     <style jsx>{`
@@ -165,7 +164,20 @@ class Layout extends React.Component {
                       }
                       a {
                         text-decoration: none;
-                        color: #666;
+                        color: ${this.state.theme.color.brand.light};
+                        font-family: ${this.state.theme.font.family.target};
+                      }
+                      a:after {
+                        content: "";
+                        width: 0px;
+                        height: 2px;
+                        display: block;
+                        background: ${this.state.theme.color.brand.primary};
+                        transition: 300ms;
+                      }
+
+                      a:hover:after {
+                        width: 100%;
                       }
                       main {
                         width: auto;

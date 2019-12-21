@@ -101,7 +101,7 @@ const Projects = props => {
           flex-direction: row;
           overflow: auto;
           flex-wrap: wrap;
-          padding: 10px;
+          padding: 20px;
         }
 
         /* 
