@@ -89,6 +89,8 @@ const Experience = props => {
                   variant="scrollable"
                   scrollButtons="auto"
                   aria-label="scrollable auto tabs example"
+                  id={`scrollable-force-tabpanel`}
+                  aria-labelledby={`scrollable-force-tab`}
                 >
                   <Tab label="C.H. Robinson" {...a11yProps(0)} />
                   <Tab label="Grouplens Research" {...a11yProps(1)} />

@@ -20,18 +20,17 @@ const AboutMe = props => {
               </div>
               <br />
               <p>
-                Hi! My name is Ben Wiley, and I am currently studying Computer Science at the
-                University of Minnesota, Twin Cities. My interests lie at the intersection of web
-                development and business applications; I am always looking to hone my abilities to
-                create user-friendly, robust, and intuitive web applications that can help provide
-                value to its end-users.
+                Hi! My name is Ben Wiley, and I am currently a third-year undergraduate student
+                studying Computer Science at the University of Minnesota, Twin Cities. My interests
+                lie at the intersection of web development and business applications; I am always
+                looking to hone my abilities to create user-friendly, robust, and intuitive web
+                applications that can help provide value to its end-users.
                 <br />
                 <br />
                 At the University of Minnesota, I am pursuing a Bachelors of Science in Computer
-                Science, Science, well as a minor in Chinese Language & Literature. Beyond the
-                classroom, I participate in Human Computer Interaction research with Grouplens
-                Research where I am able to employ computational resources to socially-impactful
-                problems.
+                Science, as well as a minor in Chinese Language & Literature. Beyond the classroom,
+                I participate in Human Computer Interaction research with Grouplens Research where I
+                am able to employ computational resources to socially-impactful problems.
                 <br />
                 <br />
                 Here are a few technologies I have worked with:
@@ -39,7 +38,7 @@ const AboutMe = props => {
               <ul className="technology-list">
                 <li>Angular</li>
                 <li>PHP</li>
-                <li>SQL Server</li>
+                <li>SQL</li>
                 <li>Docker</li>
                 <li>ReactJS</li>
                 <li>HTML/CSS</li>
@@ -48,6 +47,7 @@ const AboutMe = props => {
                 <li>C#</li>
                 <li>Java</li>
                 <li>Node.js</li>
+                <li>Azure Web Apps</li>
               </ul>
             </div>
             <div className="about-me-photo">
@@ -173,6 +173,7 @@ const AboutMe = props => {
           cover: fit;
           border-radius: 50%;
           align-content: center;
+          height: 100%;
           width: 100%;
         }
 
