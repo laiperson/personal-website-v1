@@ -8,11 +8,6 @@ import GithubLogo from "../../images/svg-icons/github.svg";
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
 
-  let iconStyles = {
-    display: "inline-block",
-    fill: "green"
-  };
-
   return (
     <React.Fragment>
       <section className="hero">
@@ -22,13 +17,13 @@ const Hero = props => {
           Learn More
         </button>
         <div className="icons">
-          <a href="https://www.linkedin.com/in/benwileymn/" style={iconStyles}>
+          <a href="https://www.linkedin.com/in/benwileymn/">
             <LinkedInLogo id="linkedin" />
           </a>
-          <a href="mailto:wiley.ben77@gmail.com" style={iconStyles}>
+          <a href="mailto:wiley.ben77@gmail.com">
             <EmailLogo id="email" />
           </a>
-          <a href="https://github.com/BenWileyUMN" style={iconStyles}>
+          <a href="https://github.com/BenWileyUMN">
             <GithubLogo id="github" />
           </a>
         </div>

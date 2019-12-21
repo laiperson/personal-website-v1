@@ -24,13 +24,14 @@ const AboutMe = props => {
                 studying Computer Science at the University of Minnesota, Twin Cities. My interests
                 lie at the intersection of web development and business applications; I am always
                 looking to hone my abilities to create user-friendly, robust, and intuitive web
-                applications that can help provide value to its end-users.
+                applications that can help provide value to their end-users.
                 <br />
                 <br />
                 At the University of Minnesota, I am pursuing a Bachelors of Science in Computer
                 Science, as well as a minor in Chinese Language & Literature. Beyond the classroom,
                 I participate in Human Computer Interaction research with Grouplens Research where I
-                am able to employ computational resources to socially-impactful problems.
+                am able to employ computational resources to identify and explore socially-impactful
+                problems.
                 <br />
                 <br />
                 Here are a few technologies I have worked with:
