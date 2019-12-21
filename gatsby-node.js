@@ -54,22 +54,11 @@ exports.createPages = ({ graphql, actions }) => {
         `
           {
             allMarkdownRemark(
-              ` + filters + `
-              sort: { fields: [fields___prefix], order: DESC }
               limit: 1000
             ) {
               edges {
                 node {
                   id
-                  fields {
-                    slug
-                    prefix
-                    source
-                  }
-                  frontmatter {
-                    title
-                    category
-                  }
                 }
               }
             }

@@ -222,7 +222,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  pages: PropTypes.array.isRequired,
+  pages: PropTypes.array,
   path: PropTypes.string.isRequired,
   theme: PropTypes.object.isRequired
 };

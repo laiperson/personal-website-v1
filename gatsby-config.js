@@ -50,27 +50,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/posts/`,
-        name: "posts"
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/pages/`,
-        name: "pages"
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `parts`,
-        path: `${__dirname}/content/parts/`
-      }
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -202,35 +181,19 @@ module.exports = {
               });
             },
             query: `
-              {
-                allMarkdownRemark(
-                  limit: 1000,
-                  sort: { order: DESC, fields: [fields___prefix] },
-                  filter: {
-                    fields: {
-                      prefix: { ne: null },
-                      slug: { ne: null }
-                    },
-                    frontmatter: {
-                      author: { ne: null }
-                    }
-                  }
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields {
-                        slug
-                        prefix
-                      }
-                      frontmatter {
-                        title
-                      }
-                    }
+            {
+              allMarkdownRemark(
+                limit: 1000,
+                sort: { order: DESC}
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
                   }
                 }
               }
+            }
             `,
             output: "/rss.xml"
           }
