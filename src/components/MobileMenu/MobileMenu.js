@@ -3,11 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
 const MenuMobile = props => {
-  const { theme, active, toggle } = props;
+  const { theme, active, toggleMenu, toggleHamburger } = props;
 
-  var open = active;
-
-  const itemList = React.createRef();
   const items = [
     { to: "/", label: "Home" },
     { to: "/#about-me", label: "About" },
@@ -16,18 +13,13 @@ const MenuMobile = props => {
     { to: "/#projects", label: "Projects" }
   ];
 
-  function handleToggle() {
-    console.log("handle toggle changed " + open + " to " + !open);
-    open = !open;
-  }
-
   return (
     <React.Fragment>
-      <div id="main-menu-mobile" className={`main-menu-mobile ${open ? "open" : ""}`}>
+      <div id="main-menu-mobile" className={`main-menu-mobile ${active ? "open" : ""}`}>
         <ul>
           {items.map(item => (
             <li key={item.label}>
-              <Link to={item.to} onClick={toggle}>
+              <Link to={item.to} onClick={(toggleMenu, toggleHamburger)}>
                 {item.label}
               </Link>
             </li>
@@ -190,7 +182,8 @@ const MenuMobile = props => {
 MenuMobile.propTypes = {
   active: PropTypes.bool.isRequired,
   theme: PropTypes.object.isRequired,
-  toggle: PropTypes.func.isRequired
+  toggleMenu: PropTypes.func.isRequired,
+  toggleHamburger: PropTypes.func.isRequired
 };
 
 export default MenuMobile;

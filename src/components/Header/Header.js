@@ -3,13 +3,10 @@ import PropTypes from "prop-types";
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
-import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
-import Menu from "../Menu";
 import Hamburger from "../Hamburger";
 import MobileMenu from "../MobileMenu";
 
-import avatar from "../../images/jpg/avatar.jpg";
 import logo from "../../images/png/BWTransparent.png";
 
 class Header extends React.Component {
@@ -17,7 +14,8 @@ class Header extends React.Component {
     super(props);
     this.state = {
       menuActive: false,
-      fixed: false
+      fixed: false,
+      hamburgerActive: false
     };
   }
 
@@ -25,6 +23,13 @@ class Header extends React.Component {
     this.setState(prevState => ({
       menuActive: !prevState.menuActive
     }));
+  };
+
+  toggleHamburger = () => {
+    this.setState(prevState => ({
+      hamburgerActive: !prevState.hamburgerActive
+    }));
+    this.toggleMenu(this.state.hamburgerActive);
   };
 
   visibilitySensorChange = val => {
@@ -54,8 +59,18 @@ class Header extends React.Component {
               <img src={logo} alt={config.siteTitle} />
             </div>
           </Link>
-          <MobileMenu active={this.state.menuActive} theme={theme} toggle={this.toggleMenu} />
-          <Hamburger toggleMenu={this.toggleMenu} theme={theme} />
+          <MobileMenu
+            active={this.state.menuActive}
+            theme={theme}
+            toggleMenu={this.toggleMenu}
+            toggleHamburger={this.toggleHamburger}
+          />
+          <Hamburger
+            toggleMenu={this.toggleMenu}
+            toggleHamburger={this.toggleHamburger}
+            theme={theme}
+            active={this.state.hamburgerActive}
+          />
         </header>
         <VisibilitySensor onChange={this.visibilitySensorChange}>
           <div className="sensor" />

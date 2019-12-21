@@ -5,7 +5,7 @@ class Hamburger extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hamburgerActive: false
+      hamburgerActive: this.props.active
     };
   }
 
@@ -21,13 +21,13 @@ class Hamburger extends React.Component {
       <React.Fragment>
         <button
           id="toggle-main-menu-mobile"
-          className={`hamburger hamburger--slider ${this.state.hamburgerActive ? "is-active" : ""}`}
+          className={`hamburger hamburger--slider ${this.props.active ? "is-active" : ""}`}
           type="button"
-          onClick={this.handleToggle}
+          onClick={this.props.toggleHamburger}
         >
-          <div className={this.state.hamburgerActive ? "change bar1" : "bar1"}></div>
-          <div className={this.state.hamburgerActive ? "change bar2" : "bar2"}></div>
-          <div className={this.state.hamburgerActive ? "change bar3" : "bar3"}></div>
+          <div className={this.props.active ? "change bar1" : "bar1"}></div>
+          <div className={this.props.active ? "change bar2" : "bar2"}></div>
+          <div className={this.props.active ? "change bar3" : "bar3"}></div>
         </button>
 
         <style jsx>{`
@@ -109,7 +109,9 @@ class Hamburger extends React.Component {
 
 Hamburger.propTypes = {
   toggleMenu: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
+  active: PropTypes.bool.isRequired,
+  toggleHamburger: PropTypes.func.isRequired
 };
 
 export default Hamburger;
