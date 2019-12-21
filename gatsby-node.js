@@ -44,18 +44,17 @@ exports.createPages = ({ graphql, actions }) => {
     const categoryTemplate = path.resolve("./src/templates/CategoryTemplate.js");
 
     // Do not create draft post files in production.
-    let activeEnv = process.env.ACTIVE_ENV || process.env.NODE_ENV || "development"
-    console.log(`Using environment config: '${activeEnv}'`)
+    let activeEnv = process.env.ACTIVE_ENV || process.env.NODE_ENV || "development";
+    console.log(`Using environment config: '${activeEnv}'`);
     let filters = `filter: { fields: { slug: { ne: null } } }`;
-    if (activeEnv == "production") filters = `filter: { fields: { slug: { ne: null } , prefix: { ne: null } } }`
+    if (activeEnv == "production")
+      filters = `filter: { fields: { slug: { ne: null } , prefix: { ne: null } } }`;
 
     resolve(
       graphql(
         `
           {
-            allMarkdownRemark(
-              limit: 1000
-            ) {
+            allMarkdownRemark(limit: 1000) {
               edges {
                 node {
                   id

@@ -126,23 +126,6 @@ class Layout extends React.Component {
                 strong {
                   font-weight: ${this.state.font600loaded ? 600 : 400};
                 }
-                a {
-                  text-decoration: none;
-                  color: ${this.state.theme.color.brand.light};
-                  font-family: ${this.state.theme.font.family.target};
-                }
-                a:after {
-                  content: "";
-                  width: 0px;
-                  height: 2px;
-                  display: block;
-                  background: ${this.state.theme.color.brand.primary};
-                  transition: 300ms;
-                }
-
-                a:hover:after {
-                  width: 100%;
-                }
                 main {
                   width: auto;
                   display: block;

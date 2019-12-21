@@ -1,8 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import LinkedInLogo from "../../images/svg-icons/linkedin.svg";
+import EmailLogo from "../../images/svg-icons/email.svg";
+import GithubLogo from "../../images/svg-icons/github.svg";
+
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
+
+  let iconStyles = {
+    display: "inline-block",
+    fill: "green"
+  };
 
   return (
     <React.Fragment>
@@ -12,10 +21,52 @@ const Hero = props => {
         <button onClick={scrollToContent} aria-label="scroll">
           Learn More
         </button>
+        <div className="icons">
+          <a href="https://www.linkedin.com/in/benwileymn/" style={iconStyles}>
+            <LinkedInLogo id="linkedin" />
+          </a>
+          <a href="mailto:wiley.ben77@gmail.com" style={iconStyles}>
+            <EmailLogo id="email" />
+          </a>
+          <a href="https://github.com/BenWileyUMN" style={iconStyles}>
+            <GithubLogo id="github" />
+          </a>
+        </div>
       </section>
 
       {/* --- STYLES --- */}
       <style jsx>{`
+        :global(svg#email) {
+          display: inline-block;
+          fill: ${theme.color.brand.primary};
+          height: 40px;
+          width: 40px;
+        }
+
+        :global(svg#linkedin) {
+          display: inline-block;
+          fill: ${theme.color.brand.primary};
+          height: 40px;
+          margin-right: 5px;
+        }
+
+        :global(svg#github) {
+          display: inline-block;
+          fill: ${theme.color.brand.primary};
+          height: 35px;
+          margin-bottom: 3px;
+          margin-right: 5px;
+        }
+
+        :global(svg#linkedin:hover, svg#email:hover, svg#github:hover) {
+          transform: scale(1.3);
+        }
+
+        .icons {
+          position: absolute;
+          bottom: 20px;
+        }
+
         .hero {
           align-items: center;
           background: ${theme.hero.background};

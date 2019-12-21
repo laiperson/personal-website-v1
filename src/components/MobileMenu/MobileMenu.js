@@ -19,7 +19,7 @@ const MenuMobile = props => {
         <ul>
           {items.map(item => (
             <li key={item.label}>
-              <Link to={item.to} onClick={(toggleMenu, toggleHamburger)}>
+              <Link to={item.to} onClick={(toggleMenu, toggleHamburger)} id="menuLink">
                 {item.label}
               </Link>
             </li>
@@ -173,6 +173,24 @@ const MenuMobile = props => {
 
         .lock-scroll {
           overflow: hidden;
+        }
+
+        :global(a#menuLink) {
+          text-decoration: none;
+          color: ${theme.color.brand.light};
+          font-family: ${theme.font.family.target};
+        }
+        :global(a#menuLink:after) {
+          content: "";
+          width: 0px;
+          height: 2px;
+          display: block;
+          background: ${theme.color.brand.primary};
+          transition: 300ms;
+        }
+
+        :global(a#menuLink:hover:after) {
+          width: 100%;
         }
       `}</style>
     </React.Fragment>

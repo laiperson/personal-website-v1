@@ -63,11 +63,15 @@ const Project = props => {
           overflow: auto;
         }
 
-        :global(svg) {
+        :global(svg#github-logo) {
           position: relative;
           height: 40px;
           fill: ${theme.color.brand.darkActive};
           bottom: 0;
+        }
+
+        :global(svg#github-logo:hover) {
+          transform: scale(1.2);
         }
 
         a {
