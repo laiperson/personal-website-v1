@@ -98,7 +98,7 @@ const Experience = props => {
                 </Tabs>
                 <TabPanel value={value} index={0}>
                   <h1>
-                    Software Development Intern<span id="employer-CHR">@ C.H. Robinson</span>
+                    Software Development Intern<span className="employer" id="employer-CHR">@ C.H. Robinson</span>
                   </h1>
                   <h3>May 2018 - August 2018</h3>
                   <div className="job-description">
@@ -122,7 +122,7 @@ const Experience = props => {
                 <TabPanel value={value} index={1}>
                   <h1>
                     Undergraduate Student Researcher
-                    <span id="employer-Grouplens">@ Grouplens Research</span>
+                    <span className="employer" id="employer-Grouplens">@ Grouplens Research</span>
                   </h1>
                   <h3>August 2018 - Present</h3>
                   <div className="job-description">
@@ -143,7 +143,7 @@ const Experience = props => {
                 </TabPanel>
                 <TabPanel value={value} index={2}>
                   <h1>
-                    Service Engineer Intern<span id="employer-Microsoft">@ Microsoft</span>
+                    Service Engineer Intern<span className="employer" id="employer-Microsoft">@ Microsoft</span>
                   </h1>
                   <h3>May 2019 - August 2019</h3>
                   <div className="job-description">
@@ -171,7 +171,7 @@ const Experience = props => {
                 <TabPanel value={value} index={3}>
                   <h1>
                     Student Software Developer
-                    <span id="employer-C4W">@ University Center for Writing</span>
+                    <span className="employer" id="employer-C4W">@ University Center for Writing</span>
                   </h1>
                   <h3>September 2019 - Present</h3>
                   <div className="job-description">
@@ -250,7 +250,7 @@ const Experience = props => {
           font-size: ${theme.font.size.s};
         }
 
-        #employer {
+        .employer {
           font-size: ${theme.font.size.s};
           padding-left: 15px;
         }
