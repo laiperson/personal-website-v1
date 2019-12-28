@@ -3,7 +3,6 @@ import React from "react";
 import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Hero from "../components/Hero";
-import Seo from "../components/Seo";
 import AboutMe from "../components/AboutMe/AboutMe";
 import Education from "../components/Education/Education";
 import Experience from "../components/Experience/Experience";
@@ -59,8 +58,6 @@ class IndexPage extends React.Component {
         <ThemeContext.Consumer>{theme => <Experience theme={theme} />}</ThemeContext.Consumer>
 
         <ThemeContext.Consumer>{theme => <Projects theme={theme} />}</ThemeContext.Consumer>
-
-        <Seo />
 
         <style jsx>{`
           hr {
