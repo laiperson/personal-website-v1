@@ -23,6 +23,7 @@ class Hamburger extends React.Component {
           id="toggle-main-menu-mobile"
           className={`hamburger hamburger--slider ${this.props.active ? "is-active" : ""}`}
           type="button"
+          aria-label="menu-button"
           onClick={this.props.toggleHamburger}
         >
           <div className={this.props.active ? "change bar1" : "bar1"}></div>

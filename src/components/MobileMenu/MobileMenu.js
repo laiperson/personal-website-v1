@@ -19,7 +19,7 @@ const MenuMobile = props => {
         <ul>
           {items.map(item => (
             <li key={item.label}>
-              <Link to={item.to} onClick={(toggleMenu, toggleHamburger)} id="menuLink">
+              <Link to={item.to} onClick={(toggleMenu, toggleHamburger)} id={item.label}>
                 {item.label}
               </Link>
             </li>

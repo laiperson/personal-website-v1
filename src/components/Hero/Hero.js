@@ -17,13 +17,13 @@ const Hero = props => {
           Learn More
         </button>
         <div className="icons">
-          <a href="https://www.linkedin.com/in/benwileymn/">
+          <a href="https://www.linkedin.com/in/benwileymn/" aria-label="LinkedIn">
             <LinkedInLogo id="linkedin" />
           </a>
-          <a href="mailto:wiley.ben77@gmail.com">
+          <a href="mailto:wiley.ben77@gmail.com" aria-label="Email">
             <EmailLogo id="email" />
           </a>
-          <a href="https://github.com/BenWileyUMN">
+          <a href="https://github.com/BenWileyUMN" aria-label="GitHub">
             <GithubLogo id="github" />
           </a>
         </div>

@@ -58,6 +58,7 @@ const Projects = props => {
                       description={repository.description}
                       url={repository.url}
                       updatedAt={repository.createdAt}
+                      label-by={repository.name}
                     />
                   </Fade>
                 </div>

@@ -88,9 +88,8 @@ const Experience = props => {
                   textColor={theme.color.neutral.gray.a}
                   variant="scrollable"
                   scrollButtons="auto"
-                  aria-label="scrollable auto tabs example"
                   id={`scrollable-force-tabpanel`}
-                  aria-labelledby={`scrollable-force-tab`}
+                  aria-label={`scrollable-force-tab`}
                 >
                   <Tab label="C.H. Robinson" {...a11yProps(0)} />
                   <Tab label="Grouplens Research" {...a11yProps(1)} />
@@ -99,7 +98,7 @@ const Experience = props => {
                 </Tabs>
                 <TabPanel value={value} index={0}>
                   <h1>
-                    Software Development Intern<span id="employer">@ C.H. Robinson</span>
+                    Software Development Intern<span id="employer-CHR">@ C.H. Robinson</span>
                   </h1>
                   <h3>May 2018 - August 2018</h3>
                   <div className="job-description">
@@ -122,7 +121,8 @@ const Experience = props => {
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                   <h1>
-                    Undergraduate Student Researcher<span id="employer">@ Grouplens Research</span>
+                    Undergraduate Student Researcher
+                    <span id="employer-Grouplens">@ Grouplens Research</span>
                   </h1>
                   <h3>August 2018 - Present</h3>
                   <div className="job-description">
@@ -143,7 +143,7 @@ const Experience = props => {
                 </TabPanel>
                 <TabPanel value={value} index={2}>
                   <h1>
-                    Service Engineer Intern<span id="employer">@ Microsoft</span>
+                    Service Engineer Intern<span id="employer-Microsoft">@ Microsoft</span>
                   </h1>
                   <h3>May 2019 - August 2019</h3>
                   <div className="job-description">
@@ -171,7 +171,7 @@ const Experience = props => {
                 <TabPanel value={value} index={3}>
                   <h1>
                     Student Software Developer
-                    <span id="employer">@ University Center for Writing</span>
+                    <span id="employer-C4W">@ University Center for Writing</span>
                   </h1>
                   <h3>September 2019 - Present</h3>
                   <div className="job-description">

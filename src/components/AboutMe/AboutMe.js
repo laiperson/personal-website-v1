@@ -52,7 +52,7 @@ const AboutMe = props => {
               </ul>
             </div>
             <div className="about-me-photo">
-              <img src={avatar}></img>
+              <img src={avatar} alt="Ben Wiley Headshot"></img>
             </div>
           </Fade>
         </div>

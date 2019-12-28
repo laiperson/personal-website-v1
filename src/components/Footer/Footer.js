@@ -32,7 +32,7 @@ const Footer = props => {
       {/* --- STYLES --- */}
       <style jsx>{`
         .footerLink {
-          color: ${theme.color.brand.dark};
+          color: ${theme.color.brand.darkActive};
         }
         .footer {
           background: ${theme.color.brand.lightActive};
@@ -45,7 +45,7 @@ const Footer = props => {
             padding: 0;
 
             li {
-              color: ${theme.color.neutral.gray.g};
+              color: ${theme.color.brand.dark};
               font-size: ${theme.font.size.xxs};
               padding: ${theme.space.default} ${theme.space.default};
               position: relative;

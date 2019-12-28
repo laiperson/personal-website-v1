@@ -33,7 +33,7 @@ const Project = props => {
           <p>{description}</p>
         </div>
         <a href={url}>
-          <GithubLogo id="github-logo" />
+          <GithubLogo id={`github-logo-${name}`} aria-label={`github-logo-${name}`} />
         </a>
         <div className="pull-right">{updated}</div>
       </div>
