@@ -37,13 +37,9 @@ More information on [GatsbyJS.org](https://www.gatsbyjs.org/tutorial/part-one)
 
 ## Getting started
 
-Install the starter using Gatsby Cli `gatsby new` command.
+After cloning the repository, navigate to the root directory and use the `npm install` command. This will download all the dependencies for this project.
 
-```text
-gatsby new [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG] https://github.com/greglobinski/gatsby-starter-hero-blog.git
-```
-
-Go into the newly created directory and run
+To run this site locally, run this:
 
 ```text
 gatsby develop
