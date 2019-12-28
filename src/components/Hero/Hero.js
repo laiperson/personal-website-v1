@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import TextLoop from "react-text-loop";
 
 import LinkedInLogo from "../../images/svg-icons/linkedin.svg";
 import EmailLogo from "../../images/svg-icons/email.svg";
@@ -8,11 +9,22 @@ import GithubLogo from "../../images/svg-icons/github.svg";
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
 
+  const roles = ["Undergraduate Student.", "Full-Stack Web Developer.", "HCI Researcher.", "Software Engineer."];
+
   return (
     <React.Fragment>
       <section className="hero">
         <h1>I am Ben Wiley.</h1>
-        <h3>Undergraduate Student. Full-Stack Web Developer.</h3>
+        <h3>
+          <TextLoop interval={2500}>
+            {roles
+              .sort(() => roles[Math.random() - 0.5])
+              .map(text => (
+                text
+              ))}
+          </TextLoop>
+          {" "} Avid Learner.
+        </h3>
         <button onClick={scrollToContent} aria-label="scroll">
           Learn More
         </button>

@@ -49,6 +49,7 @@
     "react-obfuscate": "^2.1.4",
     "react-reveal": "^1.2.2",
     "react-share": "^2.2.0",
+    "react-text-loop": "^2.3.0",
     "react-transition-group": "^1.2.1",
     "react-visibility-sensor": "^4.1.0",
     "smooth-scroll": "^16.1.0",
