@@ -2,10 +2,8 @@ import PropTypes from "prop-types";
 import React from "react";
 import Fade from "react-reveal/Fade";
 
-import avatar from "../../images/jpg/avatar.jpg";
-
 const AboutMe = props => {
-  const { theme } = props;
+  const { theme, avatar } = props;
 
   return (
     <React.Fragment>
@@ -199,7 +197,8 @@ const AboutMe = props => {
 };
 
 AboutMe.propTypes = {
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
+  avatar: PropTypes.any.isRequired
 };
 
 export default AboutMe;

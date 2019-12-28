@@ -19,7 +19,7 @@ const MenuMobile = props => {
         <ul>
           {items.map(item => (
             <li key={item.label}>
-              <Link to={item.to} onClick={(toggleMenu, toggleHamburger)} id={item.label}>
+              <Link className="menuLink" to={item.to} onClick={(toggleMenu, toggleHamburger)} id={item.label}>
                 {item.label}
               </Link>
             </li>
@@ -175,12 +175,12 @@ const MenuMobile = props => {
           overflow: hidden;
         }
 
-        :global(a#menuLink) {
+        :global(a.menuLink) {
           text-decoration: none;
           color: ${theme.color.brand.light};
           font-family: ${theme.font.family.target};
         }
-        :global(a#menuLink:after) {
+        :global(a.menuLink:after) {
           content: "";
           width: 0px;
           height: 2px;
@@ -189,7 +189,7 @@ const MenuMobile = props => {
           transition: 300ms;
         }
 
-        :global(a#menuLink:hover:after) {
+        :global(a.menuLink:hover:after) {
           width: 100%;
         }
       `}</style>

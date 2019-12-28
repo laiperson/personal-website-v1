@@ -27,6 +27,9 @@ class IndexPage extends React.Component {
         },
         bgMobile: {
           resize: { src: mobile }
+        },
+        avatar: {
+          resize: { src: avatar }
         }
       }
     } = this.props;
@@ -48,7 +51,7 @@ class IndexPage extends React.Component {
         <hr ref={this.separator} />
 
         <ThemeContext.Consumer>
-          {theme => <AboutMe id="aboutme" theme={theme} />}
+          {theme => <AboutMe id="aboutme" theme={theme} avatar={avatar} />}
         </ThemeContext.Consumer>
 
         <ThemeContext.Consumer>{theme => <Education theme={theme} />}</ThemeContext.Consumer>
@@ -98,6 +101,11 @@ export const query = graphql`
     }
     bgMobile: imageSharp(fluid: { originalName: { regex: "/hero-background/" } }) {
       resize(width: 450, height: 850, quality: 90, cropFocus: CENTER) {
+        src
+      }
+    }
+    avatar: imageSharp(fluid: { originalName: { regex: "/avatar/" } }) {
+      resize(width: 300, height: 300, quality: 90, cropFocus: CENTER) {
         src
       }
     }

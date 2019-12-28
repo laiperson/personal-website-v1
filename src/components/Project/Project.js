@@ -33,7 +33,7 @@ const Project = props => {
           <p>{description}</p>
         </div>
         <a href={url}>
-          <GithubLogo id={`github-logo-${name}`} aria-label={`github-logo-${name}`} />
+          <GithubLogo className="githubLogo" id={`github-logo-${name}`} aria-label={`github-logo-${name}`} />
         </a>
         <div className="pull-right">{updated}</div>
       </div>
@@ -82,14 +82,14 @@ const Project = props => {
           overflow: auto;
         }
 
-        :global(svg#github-logo) {
+        :global(svg.githubLogo) {
           position: relative;
           height: 40px;
           fill: ${theme.color.brand.darkActive};
           bottom: 0;
         }
 
-        :global(svg#github-logo:hover) {
+        :global(svg.githubLogo:hover) {
           transform: scale(1.2);
         }
 
