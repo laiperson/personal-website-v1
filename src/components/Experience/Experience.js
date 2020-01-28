@@ -107,7 +107,7 @@ const Experience = props => {
                         Focused on back-end software development with the Robinson Fresh delivery
                         team. This internship consisted of executing project deliverables for an
                         Agile team and carrying out team stories with the business goals in sight.
-                        Worked in in an Agile Scrum team with C#, ServiceStack, Oracle SQL,
+                        Worked in an Agile Scrum team with C#, ServiceStack, Oracle SQL,
                         Microsoft SQL Server, and RESTful APIs.
                       </li>
                       <li>
